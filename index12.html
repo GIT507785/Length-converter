@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+margin: 0;
+padding: 0;
+}
+h1{
+margin-top: 40px;
+    text-align: center;
+}
+.container{
+
+margin: 0 auto;
+background-color: rgb(217, 43, 43);
+/* height: 500px; */
+width: 500px;
+text-align: center;
+border-radius: 10px;
+padding: 20px;
+}
+.input-div input{
+font-size: 23px;
+border-radius: 10px;
+width: 150px;
+padding: 10px;
+font-weight: bold;
+text-align: center;
+}
+.input-div label{
+font-size: 22px;
+
+}
+.input-div{
+
+    display: inline-block;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>unit converter</h1>
+<div class="container">
+<div class="input-div">
+    <label>feet</label> <br>
+<input type="number" value="1" id="feet" class="input">
+</div> 
+
+<div class="input-div">
+    <h1>=</h1>
+</div>
+
+
+<div class="input-div">
+    <label>inches</label> <br>
+<input type="number" value="12" id="inches" class="input">
+</div>
+
+
+</div><!--end container-->
+<h1>JuTt BaDsHa (480)</h1>
+
+<script>
+let feet = document.getElementById('feet');
+let inches = document.getElementById('inches');
+
+feet.addEventListener('input', function(){
+
+    let f = this.value;
+
+    let i = f*12;
+
+    inches.value=i;
+});
+
+
+inches.addEventListener('input', function(){
+
+let i = this.value;
+
+let f = i/12;
+if(!Number.isInteger(f)){
+    f=f.toFixed(2);
+};
+feet.value=f;
+});
+
+
+</script>
+</body>
+</html>
